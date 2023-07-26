@@ -1,0 +1,28 @@
+{
+  "name": "Picture In Picture",
+  "description": "This is an amazing Picture in picture extension",
+  "version": "1.0.0",
+  "manifest_version": 3,
+  "icons": {
+    "16": "logo.png",
+    "48": "logo.png",
+    "128": "logo.png"
+  },
+  "content_scripts": [
+    {
+      "js": ["background.js"],
+      "matches": ["<all_urls>"],
+      "run_at": "document_end"
+    }
+  ],
+  "action": {
+    "default_title": "PictureInPicture"
+  },
+
+  "background": {
+    "service_worker": "background.js"
+  },
+
+  "permissions": ["storage", "scripting", "activeTab", "tabs"],
+  "host_permissions": ["*://*/*"]
+}
